@@ -4,7 +4,7 @@ import './TodoItem.jsx'
 
 function TodoList() {
   return (
-    <ul className="todoList">
+    <ul className="todoList cont">
         
     </ul>
   )

@@ -3,9 +3,9 @@ import './TodoItem.scss'
 
 function TodoItem() {
   return (
-    <form className="todoItem">
+    <li className="todoItem">
 
-    </form>
+    </li>
   )
 }
 

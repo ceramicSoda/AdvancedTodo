@@ -5,7 +5,7 @@ import TodoList from './TodoList.jsx'
 
 function Todo() {
   return (
-    <div className="todo">
+    <div className="todo cont">
         <TodoForm/>
         <TodoList/>
     </div>
