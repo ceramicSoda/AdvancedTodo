@@ -4,8 +4,9 @@ import './TodoForm.scss'
 function TodoForm() {
   return (
     <form className="todoForm">
-        <input type="text" placeholder="add your task..."/>
-        <input type="submit" value="add"/>
+        
+        <input className="todoForm__input" type="text" placeholder="add your task..."/>
+        <input className="todoForm__submit" type="submit" value="add"/>
     </form>
   )
 }
