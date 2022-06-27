@@ -2,12 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
     name: 'tasks',
-    initialState: {
-        tasks: [],
-    },
+    initialState: {tasks: []},
     reducers: {
-        addTask(){},
-        removeTask(){},
-        checkTask(){},
+        addTask(state, action){
+            tasks.push({
+                id: new Date().getTime,
+                title: action.payload.text,
+                done: false
+            })
+        },
+        removeTask(state, action){},
+        checkTask(state, action){}
     }
 })
