@@ -4,7 +4,8 @@ import './TodoItem.scss'
 function TodoItem() {
   return (
     <li className="todoItem">
-
+      <p>Your task! </p>
+      <button>Remove</button>
     </li>
   )
 }
