@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import './TodoItem.scss'
 
 function TodoItem() {

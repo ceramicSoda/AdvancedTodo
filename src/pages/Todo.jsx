@@ -11,7 +11,7 @@ function Todo() {
   }
   const checkTask = (taskId) => {}
   const removeTask  = (taskId) => {}
-
+ 
   return (
     <div className="todo">
         <div className="todo__cont cont">
