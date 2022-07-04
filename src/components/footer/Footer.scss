@@ -1,0 +1,17 @@
+.footer{
+    background-color: #141414;
+    color: #f5f5f5;
+    width: 100%;
+    .footer__cont{
+        display: flex;
+        justify-content: space-between; 
+        flex-direction: row;    
+        .footer__left, .footer__right{
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        .footer__left{
+            padding-right: 64px;
+        }
+    }
+}
