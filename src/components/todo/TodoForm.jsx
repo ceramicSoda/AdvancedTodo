@@ -1,16 +1,28 @@
 import { useState } from 'react'
 import './TodoForm.scss'
+import { useDispatch } from 'react-redux'
+import { addTask } from "../../store/todoSlice"
 
 function TodoForm({ addTask }) {
-  const [input, setInput] = useState('');
-  const handleChange = (e) =>{setInput(e.currentTarget.value);}
+  const [value, setValue] = useState(); 
+  const dispatch = useDispatch();
 
-  
-
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    dispatch(addTask({title: value}));
+    setValue("")
+  }
+  const handleChange = (e) => {setValue(e.target.value)}
   return (
-    <form className="todoForm">
-        <input className="todoForm__input" type="text" placeholder="add your task..." onChange={handleChange} value={input}/>
-        <input className="todoForm__submit" type="submit" value="add"/>
+    <form className="todoForm" onSubmit={handleSubmit}>
+        <input  className="todoForm__input" 
+                type="text" 
+                placeholder="add your task..." 
+                onChange={handleChange} 
+                value={value || ""}/>
+        <input  className="todoForm__submit" 
+                type="submit" 
+                value="add"/>
     </form>
   )
 }
