@@ -3,7 +3,7 @@ import './TodoForm.scss'
 import { useDispatch } from 'react-redux'
 import { addTask } from "../../store/todoSlice"
 
-function TodoForm({ addTask }) {
+function TodoForm() {
   const [value, setValue] = useState(); 
   const dispatch = useDispatch();
 
