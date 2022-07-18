@@ -3,16 +3,25 @@ import './TodoForm.scss'
 import { useDispatch } from 'react-redux'
 import { addTask } from "../../store/todoSlice"
 
-function TodoForm({ addTask }) {
+function TodoForm() {
   const [value, setValue] = useState(); 
   const dispatch = useDispatch();
 
+  const validateInput = (value) => {
+    return(value.replace(/[^.\w\s\.\,()&*?+=!-]/gi, "").substring(0, 72))
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault(); 
-    dispatch(addTask({title: value}));
-    setValue("")
+    if (value) {
+      dispatch(addTask({title: validateInput(value)}));
+      setValue("")
+    }
   }
-  const handleChange = (e) => {setValue(e.target.value)}
+  const handleChange = (e) => {
+    setValue(validateInput(e.target.value))
+  }
+
   return (
     <form className="todoForm" onSubmit={handleSubmit}>
         <input  className="todoForm__input" 
