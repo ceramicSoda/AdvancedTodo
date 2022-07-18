@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
 
 const todoSlice = createSlice({
     name: 'todo',
@@ -6,12 +7,18 @@ const todoSlice = createSlice({
     reducers: {
         addTask( state, action ){
             state.tasks.push({
-                id: Date.now(),
+                id: nanoid(),
                 title: action.payload.title,
-                completed: false
+                done: false
             });
+        },
+        removeTask( state, action ){
+            state.tasks = state.tasks.filter(i => i.id !== action.payload.id);
+        },
+        checkTask( state, action ){
+            
         }
     }
 })
-export const { addTask } = todoSlice.actions; 
+export const { addTask, removeTask, checkTask } = todoSlice.actions; 
 export default todoSlice.reducer; 

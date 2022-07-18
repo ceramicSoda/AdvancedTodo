@@ -1,11 +1,18 @@
 import { useDispatch } from 'react-redux'
 import './TodoItem.scss'
+import { removeTask } from "../../store/todoSlice"
 
-function TodoItem() {
+function TodoItem({ id, title, done}) {
+  const dispatch = useDispatch(); 
+
+  const handleRemove = () => {
+    dispatch(removeTask({id}))
+  }
+  
   return (
-    <li className="todoItem">
-      <p>Your task! </p>
-      <button>Remove</button>
+    <li className="todoItem"> 
+      <p>{title}</p>
+      <button onClick={handleRemove}>Remove</button>
     </li>
   )
 }
