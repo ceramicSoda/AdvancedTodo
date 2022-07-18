@@ -2,14 +2,11 @@ import { useState } from 'react'
 import './TodoForm.scss'
 import { useDispatch } from 'react-redux'
 import { addTask } from "../../store/todoSlice"
+import { validateInput } from "../../common/validation"
 
 function TodoForm() {
   const [value, setValue] = useState(); 
   const dispatch = useDispatch();
-
-  const validateInput = (value) => {
-    return(value.replace(/[^.\w\s\.\,()&*?+=!-]/gi, "").substring(0, 72))
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault(); 
@@ -18,6 +15,7 @@ function TodoForm() {
       setValue("")
     }
   }
+
   const handleChange = (e) => {
     setValue(validateInput(e.target.value))
   }

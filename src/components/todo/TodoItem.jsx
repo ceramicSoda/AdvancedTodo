@@ -1,18 +1,25 @@
 import { useDispatch } from 'react-redux'
 import './TodoItem.scss'
-import { removeTask } from "../../store/todoSlice"
+import { removeTask, editTask } from "../../store/todoSlice"
 
-function TodoItem({ id, title, done}) {
+function TodoItem({ id, title, done, editMode}) {
   const dispatch = useDispatch(); 
 
   const handleRemove = () => {
     dispatch(removeTask({id}))
   }
-  
+  const handleEdit = () => {
+    dispatch(editTask({id}))
+  }
+  //<button onClick={handleEdit} visibility={editable ? "visible" : "hidden"}>Edit</button>
   return (
     <li className="todoItem"> 
-      <p>{title}</p>
-      <button onClick={handleRemove}>Remove</button>
+      <input type="text" value={title} disabled={!editMode}/>
+      <div className="todoItem__btnGroup">
+        
+        <button onClick={handleEdit} style={{visibility: editMode ? 'hidden' : 'visible'}}>Edit</button>
+        <button onClick={handleRemove}>Remove</button>
+      </div>
     </li>
   )
 }
