@@ -23,9 +23,9 @@ function TodoForm() {
     <form className="todoForm" onSubmit={handleSubmit}>
         <input  className="todoForm__input" 
                 type="text" 
-                placeholder="add your task..." 
+                value={value || ""}
                 onChange={handleChange} 
-                value={value || ""}/>
+                placeholder="add your task..." />
         <input  className="todoForm__submit" 
                 type="submit" 
                 value="add"/>
