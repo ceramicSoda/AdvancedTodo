@@ -1,18 +1,22 @@
 import './TodoItem.scss'
+import { removeTask, editTask, checkTask, applyEdit, cancelEdit } from "../../store/todoSlice"
+import { useState, useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
-import { removeTask, editTask, checkTask, applyEdit } from "../../store/todoSlice"
 import { validateInput } from "../../common/validation"
 
 function TodoItem({ id, title, done, editMode}) {
   const dispatch = useDispatch(); 
   const [value, setValue] = useState(title); 
-  const taskTitle = useSelector((state) => state.tasks) 
+  const stateTitle = useSelector((state) => state.tasks) 
+  const inputRef = useRef(null)
+  let valueBuffer = title; 
 
   const handleRemove = () => {
     dispatch(removeTask({id}))
   }
   const handleEdit = () => {
+    inputRef.current.disabled = false; 
+    inputRef.current.focus();
     dispatch(editTask({id}))
   }
   const handleChange = (e) => {
@@ -21,10 +25,19 @@ function TodoItem({ id, title, done, editMode}) {
   const handleApply = (e) => {
     dispatch(applyEdit({value, id}))
   }
-  //<button onClick={handleEdit} visibility={editable ? "visible" : "hidden"}>Edit</button>
+  const handleBlur = (e) => {
+    setValue(stateTitle)
+    dispatch(cancelEdit())
+  }
   return (
     <li className="todoItem"> 
-      <input type="text" value={value} onChange={handleChange} disabled={!editMode}/>
+      <input  type="text" 
+              ref={inputRef}
+              value={value} 
+              onChange={handleChange} 
+              onBlur={handleBlur}
+              disabled={!editMode}
+              />
       <div className="todoItem__btnGroup">
         <button onClick={handleEdit} style={{visibility: editMode ? 'hidden' : 'visible'}}>Edit</button>
         <button onClick={handleApply} style={{visibility: editMode ? 'visible' : 'hidden'}}>Apply</button>

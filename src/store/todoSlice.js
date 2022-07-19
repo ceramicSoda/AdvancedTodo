@@ -1,10 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 
-const resolveIndexId = ( arr, id ) => {
-    return arr.findIndex( obj => obj.id == id )
-}
-
 const todoSlice = createSlice({
     name: 'todo',
     initialState: {tasks: []},
@@ -35,8 +31,13 @@ const todoSlice = createSlice({
                 if (item.id == action.payload.id) item.title = action.payload.value;
                 item.editMode = false;
             })
+        },
+        cancelEdit(state){
+            state.tasks.forEach(item => item.editMode = false)
         }
     }
 })
-export const { addTask, removeTask, editTask, checkTask, applyEdit } = todoSlice.actions; 
+
+
+export const { addTask, removeTask, editTask, checkTask, applyEdit, cancelEdit } = todoSlice.actions; 
 export default todoSlice.reducer; 

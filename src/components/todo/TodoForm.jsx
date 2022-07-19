@@ -1,7 +1,7 @@
 import './TodoForm.scss'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addTask } from "../../store/todoSlice"
+import { addTask, cancelEdit } from "../../store/todoSlice"
 import { validateInput } from "../../common/validation"
 
 function TodoForm() {
@@ -15,7 +15,6 @@ function TodoForm() {
       setValue("")
     }
   }
-
   const handleChange = (e) => {
     setValue(validateInput(e.target.value))
   }
