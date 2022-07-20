@@ -4,12 +4,12 @@ import TodoItem from './TodoItem.jsx'
 
 function TodoList() {
   const tasks = useSelector((state) => state.todo.tasks)
-  const group = 0 | useSelector((state) => state.curGroup)
+  const curGroup = useSelector((state) => state.todo.curGroup)
 
   return (
     <ul className="todoList cont">
       {
-        tasks[group].map((item) => (
+        tasks[curGroup].map((item) => (
           <TodoItem key={item.id} {...item}/>
         ))
       }

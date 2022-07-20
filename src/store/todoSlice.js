@@ -18,14 +18,14 @@ const todoSlice = createSlice({
                 state.tasks.push([]);
         },
         nextGroup(state){
-            (state.curGroup < state.tasks.length)
+            (state.curGroup < (state.tasks.length-1))
             ? state.curGroup++
             : state.curGroup = 0;
         },
         prevGroup(state){
             (state.curGroup > 0)
             ? state.curGroup--
-            : state.curGroup = state.tasks.length;
+            : state.curGroup = (state.tasks.length-1);
         },
         editTask(state, action){
             state.tasks[state.curGroup].map(item => {
