@@ -1,7 +1,7 @@
 import './TodoForm.scss'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addTask, cancelEdit } from "../../store/todoSlice"
+import { addTask } from "../../store/todoSlice"
 import { validateInput } from "../../common/validation"
 
 function TodoForm() {
