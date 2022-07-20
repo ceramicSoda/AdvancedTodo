@@ -1,13 +1,16 @@
-import { GroupsSelector } from './GroupsSelector'
-import { GroupsStats } from './GroupsStats'
+import GroupsSelector from './GroupsSelector'
+import { useSelector } from 'react-redux'
+import GroupsStats from './GroupsStats'
 import './GroupsMenu.scss'
 
 function GroupsMenu() {
-  return (
-    <div className="cont">
-        <GroupsSelector></GroupsSelector>
-        <GroupsStats></GroupsStats>
-    </div>
+    const curGroup = useSelector((state) => state.todo.curGroup)
+    return (
+        <div className="cont">
+            <h2 className='groupsMenu__title'>GROUP No{curGroup}</h2>
+            <GroupsSelector/>
+            <GroupsStats/>
+        </div>
   )
 }
 
