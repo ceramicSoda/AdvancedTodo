@@ -1,0 +1,27 @@
+*{
+  box-sizing: border-box;
+}
+body,html{
+  height: 100%;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  background-color: $white;
+  color: $dark; 
+}
+
+/* ------------- basic classes ------------*/
+.cont{
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+.btn{
+  padding: 8px;
+  margin: 8px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 0;
+}
