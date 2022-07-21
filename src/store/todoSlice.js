@@ -60,5 +60,3 @@ const todoSlice = createSlice({
 
 export const { addTask, removeTask, editTask, checkTask, applyEdit, cancelEdit, addGroup, nextGroup, prevGroup } = todoSlice.actions; 
 export default todoSlice.reducer; 
-
-console.log(todoSlice); 
