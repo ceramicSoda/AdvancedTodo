@@ -2,7 +2,18 @@
     color: #f5f5f5;
     width: 100%;
     padding: 32px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     .todo__cont{
-        
+        width: 100%;
+        max-width: 960px;
+    }
+    .todo__stats{
+        color: #141717; 
+        width: 100%;
+        max-width: 240px;
+        display: flex;
+        flex-direction: column;
     }
 }

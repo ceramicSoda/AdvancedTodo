@@ -40,7 +40,7 @@ function TodoItem({ id, title, done, editMode}) {
 
   return (
     <li className="todoItem"> 
-      <input  type="text" 
+      <input  type="text"
               value={value} 
               ref={inputRef}
               onBlur={handleBlur}
