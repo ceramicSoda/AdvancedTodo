@@ -3,18 +3,23 @@ import { nanoid } from "nanoid";
 
 const todoSlice = createSlice({
     name: 'todo',
-    initialState: {tasks: [ [] ], curGroup: 0, maxGroups: 5},
+    initialState: {tasks: [ [] ], curGroup: 0, settings: {
+        maxGroups: 5,
+        maxTasks: 20
+    }},
     reducers: {
         addTask(state, action){
-            state.tasks[state.curGroup].push({
-                id: nanoid(),
-                title: action.payload.title,
-                done: false,
-                editMode: false
-            });
+            if (state.tasks[state.curGroup].length < state.settings.maxTasks){
+                state.tasks[state.curGroup].push({
+                    id: nanoid(),
+                    title: action.payload.title,
+                    done: false,
+                    editMode: false
+                });
+            }
         },
         addGroup(state){
-            if (state.tasks.length < state.maxGroups)
+            if (state.tasks.length < state.settings.maxGroups)
                 state.tasks.push([]);
         },
         nextGroup(state){
