@@ -3,15 +3,17 @@
   outline: none;
   list-style: none;
 }
-body,html{
+body,html,#root{
   height: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 body {
   //font-family: 'Montserrat', sans-serif;
   font-family: 'Albert Sans', sans-serif;
   //font-family: 'Share Tech Mono', monospace;
   font-weight: 700;
-  background-color: var(--grey);
+  background-color: var(--white);
   color: $dark; 
 }
 /*--------------------------BASIC ELEMENTS------------*/
@@ -33,7 +35,7 @@ input:disabled{
 
 /*--------------------------BASIC STYLES------------*/
 .cont{
-  max-width: 1280px;
+  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
 }
@@ -43,19 +45,19 @@ input:disabled{
   border-radius: 0;
 }
 .btn{
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
   padding: 2px 8px;
   margin: 8px;
   background-color: var(--black);
-  color: var(--grey);
+  color: var(--white);
   font-size: 24px;
   outline: none;
   border: none;
   border-radius: 0;
 }
 .btn:hover{
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
-  background-color: var(--grey);
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  background-color: var(--white);
   color: var(--black);
 }
 .btnicon{

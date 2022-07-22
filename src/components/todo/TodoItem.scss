@@ -8,12 +8,35 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    border-bottom: 1px solid var(--dark);
     width: 100%;
     & input{
         width: 100%;
         //max-width: calc(100% - 128px);
     }
+    & input:disabled:hover{
+        color: var(--black);
+        cursor: pointer;
+    }
     .todoItem__marker{
         font-size: 24px;
     }
+    .todoItem__btnGroup{
+        position: relative; 
+        min-width: 64px;
+        width: 64px;
+        & button{
+            position: absolute;
+            top: -16px;
+        }
+        & #btnedit, & #btnapply{
+            left: 0;
+        }
+        & #btnremove{
+            left: 32px;
+        }
+    }
+}
+.todoItem:last-child{
+    border-bottom: none;
 }

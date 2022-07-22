@@ -1,0 +1,10 @@
+.todoForm{
+    padding: 16px;
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .todoForm__input{
+        width: 100%;
+    }
+}
