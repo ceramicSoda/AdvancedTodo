@@ -5,7 +5,6 @@ function GroupsStats() {
   const curGroup = useSelector((state) => (state.todo.curGroup))
   const tasksAll = useSelector((state) => state.todo.tasks[curGroup].length)
   const tasksDone = useSelector((state) => state.todo.tasks[curGroup].length) 
-  //const tasksDone = useSelector((state) => console.log(state.todo.tasks[curGroup].length))
   return (
     <div className="groupsStats__cont">
         <div className="groupsStats__completed">

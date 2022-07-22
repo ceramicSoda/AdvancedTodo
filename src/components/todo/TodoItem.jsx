@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { validateInput } from "../../common/validation"
 
-function TodoItem({ id, title, done, editMode}) {
+function TodoItem({ id, title, done, index, editMode}) {
   const dispatch = useDispatch(); 
   const [value, setValue] = useState(title); 
   const inputRef = useRef(null)
@@ -40,6 +40,7 @@ function TodoItem({ id, title, done, editMode}) {
 
   return (
     <li className="todoItem"> 
+      <p className="todoItem__marker">{(index + 1 + ".").padStart(3, "0")}</p>
       <input  type="text"
               value={value} 
               ref={inputRef}
@@ -48,11 +49,17 @@ function TodoItem({ id, title, done, editMode}) {
               onChange={handleChange} 
               onKeyUp={handleInputKeys}/>
       <div className="todoItem__btnGroup">
-        <button onClick={handleEdit} 
-                style={{visibility: editMode ? 'hidden' : 'visible'}}>Edit</button>
-        <button onClick={handleApply} 
-                style={{visibility: editMode ? 'visible' : 'hidden'}}>Apply</button>
-        <button onClick={handleRemove}>Remove</button>
+        <button className='btnicon' 
+                id='btnedit'
+                onClick={handleEdit} 
+                style={{visibility: editMode ? 'hidden' : 'visible'}}></button>
+        <button className='btnicon' 
+                id='btnapply'
+                onClick={handleApply} 
+                style={{visibility: editMode ? 'visible' : 'hidden'}}></button>
+        <button className='btnicon' 
+                id='btnremove'
+                onClick={handleRemove}></button>
       </div>
     </li>
   )

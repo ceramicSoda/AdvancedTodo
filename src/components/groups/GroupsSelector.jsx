@@ -10,9 +10,9 @@ function GroupsSelector() {
     const handlePrevGroup = () => { dispatch(prevGroup()); }
   return (
     <div className="groupsSelector__cont">
-        <button onClick={ handleNewGroup }>New</button>
-        <button onClick={ handlePrevGroup }>Prev</button>
-        <button onClick={ handleNextGroup }>Next</button>
+        <button className='btn' onClick={ handleNewGroup }>new</button>
+        <button className='btn' onClick={ handlePrevGroup }>prev</button>
+        <button className='btn' onClick={ handleNextGroup }>next</button>
     </div>
   )
 }

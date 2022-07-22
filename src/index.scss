@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;600;900&display=swap');
+@use "./styles/colors.scss";  
+//@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,300;0,700;0,900;1,500&display=swap');
 @import url('./styles/reset.css');
-@import url('./styles/colors.scss');
-
 @import url('./styles/common.scss');

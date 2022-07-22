@@ -1,0 +1,19 @@
+#btnremove{background-image: url("../../../assets/icons/delete.svg");}
+#btnedit{background-image: url("../../../assets/icons/edit.svg");}
+#btnapply{background-image: url("../../../assets/icons/apply.svg");}
+#btnremove:hover{fill: var(--red)}
+
+.todoItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    & input{
+        width: 100%;
+        //max-width: calc(100% - 128px);
+    }
+    .todoItem__marker{
+        font-size: 24px;
+    }
+}

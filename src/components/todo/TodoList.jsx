@@ -9,8 +9,8 @@ function TodoList() {
   return (
     <ul className="todoList cont">
       {
-        tasks[curGroup].map((item) => (
-          <TodoItem key={item.id} {...item}/>
+        tasks[curGroup].map((item, index) => (
+          <TodoItem key={item.id} {...item} index={index}/>
         ))
       }
     </ul>

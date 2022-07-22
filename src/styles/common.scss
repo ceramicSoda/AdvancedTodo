@@ -1,27 +1,75 @@
 *{
   box-sizing: border-box;
+  outline: none;
+  list-style: none;
 }
 body,html{
   height: 100%;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  background-color: $white;
+  //font-family: 'Montserrat', sans-serif;
+  font-family: 'Albert Sans', sans-serif;
+  //font-family: 'Share Tech Mono', monospace;
+  font-weight: 700;
+  background-color: var(--grey);
   color: $dark; 
 }
+/*--------------------------BASIC ELEMENTS------------*/
+input[type=text]{
+  background: none; 
+  color: var(--black);
+  border: none;
+  border-bottom: 4px solid var(--black);
+  margin: 8px;
+  padding: 2px 8px;
+  font-size: 24px;
+  transition: border 0.2s ease-in, color 0.2s ease-in;
+}
+input:disabled{
+    transition: border 0.2s ease-in, color 0.2s ease-in;
+    color: var(--dark);
+    border-bottom: 4px solid transparent;
+  }
 
-/* ------------- basic classes ------------*/
+/*--------------------------BASIC STYLES------------*/
 .cont{
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
 }
+.btn, .btnicon{
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+}
 .btn{
-  padding: 8px;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  padding: 2px 8px;
   margin: 8px;
-  background-color: #fff;
+  background-color: var(--black);
+  color: var(--grey);
+  font-size: 24px;
   outline: none;
   border: none;
   border-radius: 0;
+}
+.btn:hover{
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  background-color: var(--grey);
+  color: var(--black);
+}
+.btnicon{
+  transition: background-position 0.2s, opacity 0.2s;
+  height: 32px;
+  width: 32px;
+  background: none;
+  background-size: 80%;
+  background-position: 0 4px;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+}
+.btnicon:hover{
+  transition: background-position 0.2s, opacity 0.2s;
+  opacity: 0.9;
+  background-position: 0 0;
 }
